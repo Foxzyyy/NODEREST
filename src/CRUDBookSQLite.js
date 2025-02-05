@@ -26,7 +26,7 @@ app.get('/books', (req,res) => {
     });
 });
 //get book by ID
-app.get('/books/:id',(req,res) => {
+app.get('/book/:id',(req,res) => {
     db.get('SELECT * FROM books WHERE id = ?', req.params.id, (err, row) => {
         if (err) {
             res.status(500).send(err);
@@ -77,4 +77,4 @@ app.delete('/books/:id',(req,res) => {
 });
 
 const port = process.env.PORT || 5000;
-app.listen(port, () => console.log(`listening on port  http://localhost:${port}`));
+app.listen(port, () => console.log(`Example app listening at http://localhost:${port}`));
